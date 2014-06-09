@@ -16,10 +16,11 @@ public class AccountTest
         
         Scanner input = new Scanner(System.in);
         double depositAmount;
+        double debitAmount;
         
         System.out.print("Enter deposit amount for account1: ");
         depositAmount = input.nextDouble();
-        System.out.printf("\nadding %.2f to account1 balance\n\n",
+        System.out.printf("\nadding $%.2f to account1 balance\n\n",
                 depositAmount );
         account1.credit( depositAmount );
         
@@ -30,7 +31,7 @@ public class AccountTest
         
         System.out.print("Enter deposit amount for account2: ");
         depositAmount = input.nextDouble();
-        System.out.printf("\nadding %.2f to account2 balance\n\n", 
+        System.out.printf("\nadding $%.2f to account2 balance\n\n", 
                 depositAmount);
         account2.credit ( depositAmount );
         
@@ -38,5 +39,12 @@ public class AccountTest
                 account1.getBalance() );
         System.out.printf( "account2 balance: $%.2f\n", 
                 account2.getBalance() );
+        
+        System.out.print("Enter debit amount for account1: ");
+            debitAmount = input.nextDouble();
+        account1.debit (debitAmount);
+        
+        System.out.printf("Balance is: $%.2f\n", 
+                account1.getBalance());
     }
 }
